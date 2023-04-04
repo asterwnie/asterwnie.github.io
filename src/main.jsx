@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
+  HashRouter,
 } from "react-router-dom";
 import './index.css'
 
@@ -63,10 +64,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-  {/* This is the "root route" where the rest of the routes will render.
-  It serves at the root layout of the UI where other routes will nest. */}
-    <RouterProvider router={router} />
-
+    <HashRouter>
+      {/* This is the "root route" where the rest of the routes will render.
+      It serves at the root layout of the UI where other routes will nest. */}
+      <RouterProvider router={router} />
+    </HashRouter>
   </React.StrictMode>,
 )
