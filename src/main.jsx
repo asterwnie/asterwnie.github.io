@@ -24,7 +24,7 @@ import DeleteContact, {
 
 const router = createBrowserRouter([
   {
-    path: "/portfolio/",
+    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader, /* READS: provides data to the route element before it renders. */
