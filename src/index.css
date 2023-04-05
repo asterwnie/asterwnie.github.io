@@ -14,11 +14,6 @@ body{
   position: relative;
   height: 8rem;
   z-index: 1;
-
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
 }
 
 #header {
@@ -65,15 +60,21 @@ svg rect {
 .headerbutton {
   position: relative;
   text-decoration: none;
-  color: rgba(89, 25, 50, 0.721);
+  color: rgba(255, 233, 241, 0.721);
   font-size: large;
+  line-height: 1rem;
   margin: 0 1.5rem 0 0.25rem;
-  background-color: #efa6b6;
+  background-color: #742c3b;
+  
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 }
 
 .headerbutton:hover {
   font-size: larger;
-  color: rgb(44, 6, 17);
+  color: rgb(255, 255, 255);
 }
 
 #outlet {
@@ -91,6 +92,18 @@ svg rect {
 .mydescription{
   margin-top: 3rem;
   margin-left: 1rem;
+}
+
+.darkercircle {
+  position: absolute;
+  width: 70rem;
+  height: 70rem;
+  border: 35rem solid #742c3b;
+  border-radius: 50%;
+  top: -60rem;
+  right: -18rem;
+  z-index: -0.75;
+  pointer-events: none;
 }
 
 .circles1 {
@@ -153,7 +166,8 @@ h3{
 /* For smaller screens - changes the layout */
 @media screen and (max-width: 800px) {
   .headerbutton {
-    margin: 0 0.25rem 0 0.25rem;
+    margin: 0 0.1rem 0 0.1rem;
+    font-size: medium;
   }
 
   #navbar {
@@ -173,6 +187,10 @@ h3{
 
   h1, h2, h3 {
     text-align: center;
+  }
+
+  h3{
+    font-size: 1.5rem;
   }
 
   .horizontalspacer{

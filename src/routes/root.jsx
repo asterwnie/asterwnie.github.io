@@ -31,6 +31,7 @@ export default function Root() {
     return (
       <>
         <div className="undernav"></div>
+        <div className="darkercircle"></div>
         <div className="circles1">
           <span className="circle circle1"></span>
           <span className="circle circle2"></span>
