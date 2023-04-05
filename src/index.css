@@ -20,6 +20,7 @@ body{
   background-color: var(--backgroundlight);
   margin: 0;
   padding: 0;
+  height: fit-content;
 
   /* dotted pattern */
   /* Colors */
@@ -212,9 +213,10 @@ footer p {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 200px;
+  min-width: 200px;
   border: 3px solid var(--backgroundlight);
   border-radius: 18px;
+  box-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
 }
 
 .mydescription{
@@ -222,6 +224,7 @@ footer p {
   margin-left: 1rem;
 }
 
+/* "download my CV" button */
 .mydescription p {
   font-size: small;
   font-weight: bold;
@@ -231,22 +234,28 @@ footer p {
   border-radius: 0.5rem;
   margin-top: 20px;
   background-color: var(--accentblue);
+  box-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
 }
 
 h1, h2, h3, h4{
   font-family: 'Fredoka', sans-serif;
   font-weight: bold;
   line-height: 90%;
+  width:fit-content;
 }
 
 h1{
   font-size: 4rem;
   color: var(--darktext);
+  width:fit-content;
+  text-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
 }
 
 h3{
   font-size: 2rem;
   color: var(--mediumtext);
+  background-color: var(--backgroundmedium);
+  
 }
 
 h4 {
@@ -254,16 +263,23 @@ h4 {
   color: var(--mediumtext);
 }
 
-.projectsheader{
+.sectionrow {
+  margin-bottom: 3rem;
+}
+
+.sectionheader{
   color: white;
   font-weight: bold;
-  min-width: 80%;
+  min-width: 100%;
   left: 0; 
   right: 0; 
   margin: 0 auto 0 auto;
   background-color: var(--accentblue);
   border-radius: 2rem;
   padding: 0.5rem 1rem;
+  z-index: 2;
+  
+  box-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
 }
 
 .projects {
@@ -273,7 +289,6 @@ h4 {
   justify-content: center;
   padding: 1rem;
   width: 100%;
-  margin-top: -5rem;
 }
 
 .projecticon {
@@ -290,6 +305,7 @@ h4 {
   height: 100%;
   width: 100%;
   border-radius: 18px;
+  box-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
 }
 
 .projecticon p {
@@ -303,6 +319,13 @@ h4 {
   margin-right: auto;
   text-align: center;
   padding: 0 10px 0 10px;
+}
+
+.aboutme{
+  background: white;
+  margin-top: -1rem;
+  z-index: 1;
+  padding: 2rem 2rem 5rem 2rem;
 }
 
 /* For smaller screens - changes the layout */
@@ -344,17 +367,11 @@ h4 {
   h1, h2, h3 {
     text-align: center;
     line-height: 90%;
-  }
-
-  h1{
     background-color: var(--backgroundmedium);
-    width: fit-content;
   }
 
   h3{
     font-size: 1.5rem;
-    background-color: var(--backgroundmedium);
-    width: fit-content;
   }
 
   .horizontalspacer{
@@ -366,10 +383,10 @@ h4 {
   }
 
   .circles3 {
-    bottom: -10rem;
+    bottom: -25rem;
   }
 
-  .projectsheader {
+  .sectionheader {
     margin-top: 2rem;
   }
 }

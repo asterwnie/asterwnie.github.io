@@ -41,6 +41,7 @@ export default function Index() {
               src={portrait} 
               alt="Portrait of Aster Nie."
               className="myportrait"
+              fluid
               >
             </Image>
           </Col>
@@ -57,15 +58,30 @@ export default function Index() {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className='sectionrow'>
           <motion.div 
             className='projects'
             variants={parentVariants}
             initial="hidden"
             animate="visible"
           >
-            <p className='projectsheader'>MY PROJECTS</p>
+            <p className='sectionheader'>MY PROJECTS</p>
             <Projects amount={9}/>
+          </motion.div>
+        </Row>
+        <Row className='sectionrow'>
+          <motion.div 
+            className='projects'
+            variants={parentVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <p className='sectionheader'>ABOUT ME</p>
+            <div className='aboutme'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              <br/><br/>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
           </motion.div>
         </Row>
       </Container>
