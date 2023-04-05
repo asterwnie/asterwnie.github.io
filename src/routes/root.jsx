@@ -7,97 +7,67 @@ import {
     useNavigation, /* lets us add some user feedback while pages load (global pending UI) */
  } from "react-router-dom"; 
 
-import { getContacts, createContact } from "../contacts";
+ import Container from 'react-bootstrap/Container';
+ import Nav from 'react-bootstrap/Nav';
+ import Navbar from 'react-bootstrap/Navbar';
+ 
+ import { getContacts, createContact } from "../contacts";
+import { Button } from "bootstrap";
 
 export async function action() {
     const contact = await createContact();
-    /* return { contact }; */
     return redirect(`/contacts/${contact.id}/edit`);
 }
 
 export async function loader() {
     const contacts = await getContacts();
     return { contacts };
-}
+} 
 
 export default function Root() {
-    const { contacts } = useLoaderData();
+    /* const { contacts } = useLoaderData(); */
     const navigation = useNavigation();
 
     return (
       <>
-        <div id="sidebar">
-          <h1>React Router Contacts</h1>
-          <div>
-            <form id="search-form" role="search">
-              <input
-                id="q"
-                aria-label="Search contacts"
-                placeholder="Search"
-                type="search"
-                name="q"
-              />
-              <div
-                id="search-spinner"
-                aria-hidden
-                hidden={true}
-              />
-              <div
-                className="sr-only"
-                aria-live="polite"
-              ></div>
-            </form>
-            <Form method="post">
-              <button type="submit">New</button>
-            </Form>
-          </div>
-          <nav>
-            
-            {/* If contacts are found, make new list elements 
-                else, show "No contacts"*/}
-
-            {contacts.length ? (
-                <ul>
-                    {contacts.map((contact) => (
-
-                        
-                        <NavLink 
-                            to={`contacts/${contact.id}`}
-                            className={({ isActive, isPending}) =>
-                                isActive ? "active"
-                                : isPending ? "pending"
-                                : ""
-                                }
-                            > {/* when the user is at the url in NavLink, then isActive will be true. when it is loading, it uses isPending */}
-                            
-                            {contact.first || contact.last ? (
-                                <>
-                                    {contact.first} {contact.last}
-                                </>
-                            ) : (
-                                <i>No Name</i>
-                            )}{" "}
-                            {contact.favorite && <span>★</span>}
-                        
-                        </NavLink>
-                    ))}
-                </ul>
-            ) : (
-                <p>
-                    <i>No contacts</i>
-                </p>
-            )}
-
-          </nav>
+        <div className="undernav"></div>
+        <div className="circles1">
+          <span className="circle circle1"></span>
+          <span className="circle circle2"></span>
+          <span className="circle circle3"></span>
         </div>
-        <div 
-            id="detail"
-            className={
-                navigation.state === "loading" ? "loading" : ""
-            }
-        >
-            <Outlet />
+        <div className="circles2">
+          <span className="circle circle1"></span>
+          <span className="circle circle2"></span>
+          <span className="circle circle3"></span>
         </div>
+        <Navbar id="navbar">
+            <Nav id="header">
+                <Nav.Link>
+                  <NavLink to="/" className="headerbutton">ABOUT</NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink to="/" className="headerbutton">PROJECTS</NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink to="/" className="headerbutton">RESUME</NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink to="/" className="headerbutton">CONTACT</NavLink>
+                </Nav.Link>
+              </Nav>
+        </Navbar>
+        <div class="horizontalspacer"></div>
+        <div class="wave">
+          <svg viewBox="0 70 500 60" preserveAspectRatio="none">
+            <rect x="0" y="0" width="500" height="500" style={{stroke:'none'}} />
+            <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke:'none'}}></path>
+          </svg>
+        </div>
+        <div id="outlet">
+          <Outlet />
+        </div>
+        
       </>
     );
   }

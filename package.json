@@ -1,6 +1,6 @@
 {
   "name": "aster-nie-portfolio",
-  "homepage": "https://asterwnie.github.io/",
+  "homepage": "localhost:5173",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "framer-motion": "^10.10.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "sort-by": "^1.2.0"

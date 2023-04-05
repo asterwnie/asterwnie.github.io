@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
+
 
 import Root, { 
   loader as rootLoader,
@@ -21,6 +21,9 @@ import EditContact, {
 import DeleteContact, {
   action as deleteAction,
 } from "./routes/delete";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 const router = createBrowserRouter([
   {
