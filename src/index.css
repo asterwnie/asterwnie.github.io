@@ -1,12 +1,40 @@
+:root {
+  --backgroundlight: #eadada;
+  --backgroundmedium: #efa6b6;
+  --backgrounddark: #742c3b;
+
+  --darktext: rgb(77, 28, 42);
+  --mediumtext: rgb(145, 69, 91);
+
+  --accentblue: #5b6aa5;
+  --accentyellow: #f1c253;
+}
+
 *{
   font-family: 'Comfortaa', cursive;
   /* font-family: 'Fredoka', sans-serif; */
-  margin: 0;
-  padding: 0;
 }
 
 body{
   overflow-x: hidden;
+  background-color: var(--backgroundlight);
+  margin: 0;
+  padding: 0;
+
+  /* dotted pattern */
+  /* Colors */
+  --bg-color: var(--backgroundlight);
+  --dot-color: white;
+
+  /* Dimensions */
+  --dot-size: 3px;
+  --dot-space: 1rem;
+
+  background: 
+      linear-gradient(90deg, var(--bg-color) calc(var(--dot-space) - var(--dot-size)), transparent 1%),
+      linear-gradient(var(--bg-color) calc(var(--dot-space) - var(--dot-size)), transparent 1%),
+      var(--dot-color);
+	background-size: var(--dot-space)  var(--dot-space);
 }
 
 #navbar {
@@ -17,7 +45,6 @@ body{
 }
 
 #header {
-  font-weight: bolder;
   display: flex;
 }
 
@@ -25,12 +52,12 @@ body{
   position:absolute;
   height: 8rem;
   width: 100%;
-  background-color: #efa6b6;
+  background-color: var(--backgroundmedium);
 }
 
 .horizontalspacer{
   height: 20rem;
-  background-color: #efa6b6;
+  background-color: var(--backgroundmedium);
 }
 
 svg {
@@ -39,7 +66,7 @@ svg {
 }
 
 svg path {
-  fill: #efa6b6;
+  fill: var(--backgroundmedium);
 }
 
 svg rect {
@@ -62,9 +89,10 @@ svg rect {
   text-decoration: none;
   color: rgba(255, 233, 241, 0.721);
   font-size: large;
+  font-weight: bold;
   line-height: 1rem;
   margin: 0 1.5rem 0 0.25rem;
-  background-color: #742c3b;
+  background-color: var(--backgrounddark);
   
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
@@ -74,31 +102,14 @@ svg rect {
 
 .headerbutton:hover {
   font-size: larger;
-  color: rgb(255, 255, 255);
-}
-
-#outlet {
-  width: 100%;
-  position: absolute;
-  padding: 0;
-  margin-top: -20rem;
-}
-
-.myportrait {
-  border: 3px solid #FFF;
-  border-radius: 18px;
-}
-
-.mydescription{
-  margin-top: 3rem;
-  margin-left: 1rem;
+  color: white;
 }
 
 .darkercircle {
   position: absolute;
   width: 70rem;
   height: 70rem;
-  border: 35rem solid #742c3b;
+  border: 35rem solid var(--backgrounddark);
   border-radius: 50%;
   top: -60rem;
   right: -18rem;
@@ -122,11 +133,19 @@ svg rect {
   pointer-events: none;
 }
 
+.circles3 {
+  position: absolute;
+  bottom: 0rem;
+  left: -8%;
+  pointer-events: none;
+  height: 12rem;
+}
+
 .circle {
   position: absolute;
   width: 40rem;
   height: 40rem;
-  border: 3px solid #FFF;
+  border: 3px solid var(--backgroundlight);
   border-radius: 50%;
   display: inline;
   pointer-events: none;
@@ -148,6 +167,62 @@ svg rect {
   pointer-events: none;
 }
 
+#outlet {
+  width: 100%;
+  margin-top: -20rem;
+  margin-bottom: 12rem;
+}
+
+footer {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--backgroundmedium);
+  color: var(--darktext);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+footer p {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--backgroundmedium);
+  width:fit-content;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#bottomwave {
+  width: 100%;
+  height: 30rem;
+  margin-top: -31rem;
+}
+
+#index {
+  position: relative;
+  width: 100%;
+}
+
+.portraitcontainer {
+  z-index: 1;
+  background-color: red;
+}
+
+.myportrait {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  border: 3px solid var(--backgroundlight);
+  border-radius: 18px;
+}
+
+.mydescription{
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
 h1, h2, h3{
   font-family: 'Fredoka', sans-serif;
   font-weight: bold;
@@ -155,12 +230,69 @@ h1, h2, h3{
 
 h1{
   font-size: 4rem;
-  color: rgb(77, 28, 42);
+  color: var(--darktext);
 }
 
 h3{
   font-size: 2rem;
-  color: rgb(145, 69, 91);
+  color: var(--mediumtext);
+}
+
+.projectsheader {
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.projectsheader p {
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  left: 0; 
+  right: 0; 
+  margin: 0 auto 0 auto;
+  background-color: var(--accentblue);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  margin-top: -5rem;
+}
+
+.projecticon {
+  position: relative;
+  width: 13rem;
+  height: 10rem;
+  margin: 0.5rem;
+  z-index: 2;
+}
+
+.projectbg {
+  position: absolute;
+  background-color: var(--accentyellow);
+  height: 100%;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.projecticon p {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  padding: 0 10px 0 10px;
 }
 
 /* For smaller screens - changes the layout */
@@ -169,18 +301,27 @@ h3{
     margin: 0 0.1rem 0 0.1rem;
     font-size: small;
   }
-
-  #header {
-    font-weight: normal;
+  
+  .headerbutton:hover {
+    font-size: medium;
   }
 
   #navbar {
     justify-content: center;
   }
 
-  .mydescription{
-    margin-left: 0rem;
+  .wave {
+    --divider-height: 3rem;
   }
+
+  .mydescription{
+    display: flex;
+    margin-left: 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .myportrait {
     margin-bottom: -2rem;
     display: block;
@@ -191,11 +332,20 @@ h3{
 
   h1, h2, h3 {
     text-align: center;
-    font-weight: normal;
+    line-height: 90%;
+    margin-bottom: 1rem;
+  }
+
+  h1{
+    background-color: var(--backgroundmedium);
+    
+    width: fit-content;
   }
 
   h3{
     font-size: 1.5rem;
+    background-color: var(--backgroundmedium);
+    width: fit-content;
   }
 
   .horizontalspacer{
@@ -204,5 +354,9 @@ h3{
 
   #outlet {
     margin-top: -27rem;
+  }
+
+  .circles3 {
+    bottom: -10rem;
   }
 }

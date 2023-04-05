@@ -68,7 +68,18 @@ export default function Root() {
         <div id="outlet">
           <Outlet />
         </div>
-        
+        <footer>
+          <svg id="bottomwave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" preserveAspectRatio="none">
+            <path
+              d="M0,300c0,0,300,0,300,0s0-201,0-201-46-13-68,0-30,40-41,49c-6,4-34,4-44,9s-19,21-26,24c-15,5-58,12-75,30s-42,87-42,87" fill="#efa6b6"/>
+          </svg>
+          <div className="circles3">
+            <span className="circle circle1"></span>
+            <span className="circle circle2"></span>
+            <span className="circle circle3"></span>
+          </div>
+          <p>© DESIGNED AND BUILT BY ASTER NIE</p>
+        </footer>
       </>
     );
   }
