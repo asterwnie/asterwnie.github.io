@@ -35,7 +35,7 @@ export default function Index() {
     return (
       <Container id="index">
         <Row>
-          <Col xs={11} md={5} lg={3} class="portraitcontainer">
+          <Col xs={12} md={4} lg={3} class="portraitcontainer">
             <Image 
               roundedCircle 
               src={portrait} 
@@ -46,13 +46,16 @@ export default function Index() {
           </Col>
           <Col xs lg="auto">
             <div className="mydescription">
-              <h1>ASTER NIE</h1>
+              <h4>HI, I'M</h4>
+              <h1>ASTER NIE!</h1>
               <h3>Programmer, Web Developer, & Artist</h3>
+              <motion.p
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+              >
+                Download my CV {'>'}
+              </motion.p>
             </div>
           </Col>
-        </Row>
-        <Row className='projectsheader'>
-          <p>PROJECTS</p>
         </Row>
         <Row>
           <motion.div 
@@ -61,7 +64,8 @@ export default function Index() {
             initial="hidden"
             animate="visible"
           >
-            <Projects amount={10}/>
+            <p className='projectsheader'>MY PROJECTS</p>
+            <Projects amount={9}/>
           </motion.div>
         </Row>
       </Container>

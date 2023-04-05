@@ -56,7 +56,7 @@ body{
 }
 
 .horizontalspacer{
-  height: 20rem;
+  height: 18rem;
   background-color: var(--backgroundmedium);
 }
 
@@ -206,7 +206,6 @@ footer p {
 
 .portraitcontainer {
   z-index: 1;
-  background-color: red;
 }
 
 .myportrait {
@@ -219,13 +218,25 @@ footer p {
 }
 
 .mydescription{
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-left: 1rem;
 }
 
-h1, h2, h3{
+.mydescription p {
+  font-size: small;
+  font-weight: bold;
+  color: white;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 20px;
+  background-color: var(--accentblue);
+}
+
+h1, h2, h3, h4{
   font-family: 'Fredoka', sans-serif;
   font-weight: bold;
+  line-height: 90%;
 }
 
 h1{
@@ -238,22 +249,21 @@ h3{
   color: var(--mediumtext);
 }
 
-.projectsheader {
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
+h4 {
+  font-size: 1.5rem;
+  color: var(--mediumtext);
 }
-.projectsheader p {
+
+.projectsheader{
   color: white;
   font-weight: bold;
-  width: fit-content;
+  min-width: 80%;
   left: 0; 
   right: 0; 
   margin: 0 auto 0 auto;
   background-color: var(--accentblue);
   border-radius: 2rem;
   padding: 0.5rem 1rem;
-  text-align: center;
 }
 
 .projects {
@@ -296,7 +306,7 @@ h3{
 }
 
 /* For smaller screens - changes the layout */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
   .headerbutton {
     margin: 0 0.1rem 0 0.1rem;
     font-size: small;
@@ -320,6 +330,7 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 0.5rem;
   }
 
   .myportrait {
@@ -333,12 +344,10 @@ h3{
   h1, h2, h3 {
     text-align: center;
     line-height: 90%;
-    margin-bottom: 1rem;
   }
 
   h1{
     background-color: var(--backgroundmedium);
-    
     width: fit-content;
   }
 
@@ -358,5 +367,9 @@ h3{
 
   .circles3 {
     bottom: -10rem;
+  }
+
+  .projectsheader {
+    margin-top: 2rem;
   }
 }
