@@ -167,7 +167,11 @@ h3{
 @media screen and (max-width: 800px) {
   .headerbutton {
     margin: 0 0.1rem 0 0.1rem;
-    font-size: medium;
+    font-size: small;
+  }
+
+  #header {
+    font-weight: normal;
   }
 
   #navbar {
@@ -187,6 +191,7 @@ h3{
 
   h1, h2, h3 {
     text-align: center;
+    font-weight: normal;
   }
 
   h3{
