@@ -78,7 +78,7 @@ export default function Root() {
             <span className="circle circle2"></span>
             <span className="circle circle3"></span>
           </div>
-          <p>© DESIGNED AND BUILT BY ASTER NIE</p>
+          <p>© DESIGNED AND BUILT WITH LOVE BY ASTER NIE</p>
         </footer>
       </>
     );

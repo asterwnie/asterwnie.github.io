@@ -293,8 +293,8 @@ h4 {
 
 .projecticon {
   position: relative;
-  width: 13rem;
-  height: 10rem;
+  width: 30%;
+  height: 20rem;
   margin: 0.5rem;
   z-index: 2;
 }
@@ -306,6 +306,9 @@ h4 {
   width: 100%;
   border-radius: 18px;
   box-shadow: 2px 3px 5px rgba(25, 1, 6, 0.376);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .projecticon p {
@@ -321,11 +324,26 @@ h4 {
   padding: 0 10px 0 10px;
 }
 
+.projecttitle {
+  height: 20rem;
+  margin-bottom: 0px;
+  background-image: linear-gradient(transparent, black);
+  border-radius: 0 0 18px 18px;
+  font-size: 25px;
+}
+
+.projecttitletext{
+  margin-top: 14rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
 .aboutme{
   background: white;
   margin-top: -1rem;
   z-index: 1;
-  padding: 2rem 2rem 5rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
 }
 
 /* For smaller screens - changes the layout */
@@ -388,5 +406,17 @@ h4 {
 
   .sectionheader {
     margin-top: 2rem;
+  }
+
+  .sectionrow {
+    margin-bottom: 0rem;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+  
+  .projecticon {
+    width: 100%;
   }
 }

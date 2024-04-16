@@ -5,6 +5,9 @@ import Image from 'react-bootstrap/Image'
 import { motion, AnimatePresence } from "framer-motion"
 
 import portrait from '../assets/asternie_portrait.jpg'; // Tell webpack this JS file uses this image
+import molementum_icon from '../assets/Molementum_Square.png';
+import personal_projects_icon from '../assets/Misc_Personal_Projects.png';
+import maneki_icon from '../assets/maneki_icon.png';
 
 const variants = {
   hidden: { opacity: 0, scale: 0 },
@@ -66,7 +69,7 @@ export default function Index() {
             animate="visible"
           >
             <p className='sectionheader'>MY PROJECTS</p>
-            <Projects amount={9}/>
+            <Projects amount={3}/>
           </motion.div>
         </Row>
         <Row className='sectionrow'>
@@ -78,9 +81,29 @@ export default function Index() {
           >
             <p className='sectionheader'>ABOUT ME</p>
             <div className='aboutme'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              I'm a multidisciplinary Systems Programmer with an affinity for interactive storytelling. Creating great game feel and user experiences are my specialties. My goal is to make experiences that have social impact - I believe games have a unique role in creating a better world. In my spare time, I'm immersed in botany and medicinal herbs. Nature is always my biggest inspiration!
               <br/><br/>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <b>Professional Qualifications</b>
+              <ul>
+                <li>Systems Programming</li>
+                <li>Physics Programming</li>
+                <li>Tools Development</li>
+                <li>UI/UX</li>
+                <li>Interactive Web Development</li>
+                <li>Technical Documentation</li>
+              </ul>
+
+              <b>Technical Expertise</b>
+              <ul>
+                <li>Unity 3D (proficient)</li>
+                <li>C# (proficient)</li>
+                <li>C++ (proficient)</li>
+                <li>Javascript (proficient)</li>
+                <li>ReactJS (proficient)</li>
+                <li>.NET (foundational)</li>
+                <li>Autodesk Maya (foundational)</li>
+                <li>Unreal Engine (foundational)</li>
+              </ul>
             </div>
           </motion.div>
         </Row>
@@ -88,7 +111,7 @@ export default function Index() {
     );
   }
 
-function ProjectIcon({ order }) {
+function ProjectIcon({ title, subtitle, img }) {
   return(
     <motion.div
       className='projecticon'
@@ -98,17 +121,35 @@ function ProjectIcon({ order }) {
         className='projectbg'
         whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
       >
-        <p>PROJECT NAME {order}</p>
+        <Image 
+            className='projectbg'
+            src={img} 
+            alt={title}
+            fluid
+            />
+        <p className="projecttitle">
+        <div className="projecttitletext">
+          <b>{title}</b>
+          <span style={{fontSize: 16}}>{subtitle}</span>
+        </div>
+          
+        </p>
       </motion.div>
     </motion.div>
   )
 }
 
-function Projects({ amount })
+function Projects()
 {
   const rows = [];
-  for (let i = 0; i < amount; i++) {
-      rows.push(<ProjectIcon key={i} order={i}/>);
-  }
+  rows.push(
+    <ProjectIcon key={1} title="Molementum" subtitle="Wishlist now on Steam!" img={molementum_icon}/>
+  );
+  rows.push(
+    <ProjectIcon key={1} title="Personal Projects" subtitle="A link to my itch projects and devlogs!" img={personal_projects_icon}/>
+  );
+  rows.push(
+    <ProjectIcon key={1} title="Maneki & the Firefly Spell" subtitle="A Rad Studio summer project" img={maneki_icon}/>
+  );
   return rows;
 }
